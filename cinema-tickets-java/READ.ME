@@ -1,0 +1,24 @@
+# Cinema Tickets Coding Exercise
+
+## Overview
+This solution implements the `TicketService` interface for the DWP cinema ticket exercise.
+
+## Business Rules Covered
+- Supports ADULT, CHILD, and INFANT tickets
+- Maximum 25 tickets per transaction
+- Child and infant tickets require at least one adult
+- Infants do not require a seat
+- One infant per adult
+- Correct payment and seat reservation logic
+
+## Design Principles
+- Clean code
+- Immutable request object
+- Defensive validation
+- Single responsibility methods
+- Unit tested
+
+## Assumptions
+- One infant per adult lap
+- Zero / negative ticket quantities are invalid
+- Empty requests are invalid
