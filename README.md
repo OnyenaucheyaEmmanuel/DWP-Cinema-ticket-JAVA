@@ -27,3 +27,5 @@ This project implements a TicketService that:
 
 # How to Run
 Run tests using:
+- Java 11+
+- Maven
