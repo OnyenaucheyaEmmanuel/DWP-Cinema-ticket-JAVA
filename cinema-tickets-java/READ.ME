@@ -1,24 +1,29 @@
-# Cinema Tickets Coding Exercise
+# DWP-Cinema-ticket-JAVA-
 
-## Overview
-This solution implements the `TicketService` interface for the DWP cinema ticket exercise.
+# Overview
+This project implements a TicketService that:
+- Validates ticket purchase requests
+- Calculates total payment
+- Calculates seat reservations
+- Integrates with external payment and seat services
 
-## Business Rules Covered
-- Supports ADULT, CHILD, and INFANT tickets
-- Maximum 25 tickets per transaction
-- Child and infant tickets require at least one adult
-- Infants do not require a seat
-- One infant per adult
-- Correct payment and seat reservation logic
+# Design Decisions
+- Used constructor injection for testability
+- Created PurchaseSummary to simplify aggregation logic
+- Applied strict validation for business rules
 
-## Design Principles
-- Clean code
-- Immutable request object
-- Defensive validation
-- Single responsibility methods
-- Unit tested
+# Assumptions
+- External services always succeed
+- Account IDs > 0 are valid
 
-## Assumptions
-- One infant per adult lap
-- Zero / negative ticket quantities are invalid
-- Empty requests are invalid
+# Testing
+- JUnit 5 for testing
+- Mockito for mocking dependencies
+- Tests cover:
+  - Valid scenarios
+  - Invalid inputs
+  - Business rules
+  - Payment and seat calculations
+
+# How to Run
+Run tests using:
