@@ -1,9 +1,7 @@
 package uk.gov.dwp.uc.pairtest;
 
 import thirdparty.paymentgateway.TicketPaymentService;
-import thirdparty.paymentgateway.TicketPaymentServiceImpl;
 import thirdparty.seatbooking.SeatReservationService;
-import thirdparty.seatbooking.SeatReservationServiceImpl;
 import uk.gov.dwp.uc.pairtest.domain.TicketTypeRequest;
 import uk.gov.dwp.uc.pairtest.exception.InvalidPurchaseException;
 
@@ -18,9 +16,11 @@ public class TicketServiceImpl implements TicketService {
     private final TicketPaymentService paymentService;
     private final SeatReservationService seatReservationService;
 
-    public TicketServiceImpl() {
-        this.paymentService = new TicketPaymentServiceImpl();
-        this.seatReservationService = new SeatReservationServiceImpl();
+    // ✅ Constructor Injection (IMPORTANT)
+    public TicketServiceImpl(TicketPaymentService paymentService,
+                             SeatReservationService seatReservationService) {
+        this.paymentService = paymentService;
+        this.seatReservationService = seatReservationService;
     }
 
     @Override
